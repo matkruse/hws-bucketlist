@@ -3,7 +3,7 @@
 //  BucketList
 //
 //  Created by Matthew Kruse on 10/6/24.
-//
+//  Attempt to create a decode fuction for FileManager
 
 import Foundation
 
@@ -34,14 +34,5 @@ extension FileManager {
         } catch {
             fatalError("Failed to decode \(url) from bundle: \(error.localizedDescription)")
         }
-        
-        /*
-         guard let loaded = try? decoder.decode([String: Astronaut].self, from: data) else {
-         fatalError("Failed to decode \(file) from bundle.")
-         }
-         
-         return loaded
-         */
-        
     }
 }
