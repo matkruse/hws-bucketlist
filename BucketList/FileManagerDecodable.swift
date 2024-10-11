@@ -34,14 +34,5 @@ extension FileManager {
         } catch {
             fatalError("Failed to decode \(url) from bundle: \(error.localizedDescription)")
         }
-        
-        /*
-         guard let loaded = try? decoder.decode([String: Astronaut].self, from: data) else {
-         fatalError("Failed to decode \(file) from bundle.")
-         }
-         
-         return loaded
-         */
-        
     }
 }
