@@ -44,6 +44,8 @@ struct ContentView: View {
                 Text("Locked")
             }
 
+            Text("This View simply displays some key elements learned in the lesson. See code comments for more.")
+            
             Spacer()
             // Display where app directory sits
             Text("App Documents Directory:\n \(URL.documentsDirectory)")
@@ -52,7 +54,7 @@ struct ContentView: View {
 
             // List users sorted
             Spacer(minLength: 50)
-            Text("Sorted Users:")
+            Text("Sorted User List:")
             List(users) { user in
                 Text("\(user.lastName), \(user.firstName)")
             }
@@ -60,12 +62,15 @@ struct ContentView: View {
             Spacer()
 
             // Demonstrate a read and write
-            Button("Read and Write") {
+            Button("Read and Write Exercise") {
                 let data = Data("Test Message B".utf8)
                 let url = URL.documentsDirectory.appending(path: "message.txt")
                 
                 do {
+                    // write to file
                     try data.write(to: url, options: [.atomic, .completeFileProtection])
+                    
+                    // read from file
                     let input = try String(contentsOf: url, encoding: .utf8 )
                     print(input)
                 } catch {
@@ -76,6 +81,8 @@ struct ContentView: View {
 
             Spacer(minLength: 30)
  
+            Text("View states using enums: ")
+            
             switch loadingState {
             case .loading:
                 LoadingView()
